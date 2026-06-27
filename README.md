@@ -1,68 +1,53 @@
-# Microservices-Task
+Personalized GitHub Submission - ashish
+Your submission URL (after push):
+Code
+https://github.com/Ashish111279/Microservices-Task
+Step-by-Step Commands (Ready to Copy & Paste)
+Step 1: Fork the Repository
+Open: https://github.com/Ashish111279/Microservices-Task
 
-## Overview
-This document provides details on testing various services after running the `docker-compose` file. These services include User, Product, Order, and Gateway Services. Each service has its own endpoints for testing purposes.
+Click "Fork" button (top-right)
 
----
+Wait for GitHub to create your fork
 
-## Services and Endpoints
+Browser URL should show: https://github.com/Ashish111279/Microservices-Task
 
-### **User Service**
-- **Base URL:** `http://localhost:3000`
-- **Endpoints:**
-  - **List Users:**  
-    ```
-    curl http://localhost:3000/users
-    ```
-    Or open in your browser: [http://localhost:3000/users](http://localhost:3000/users)
+Step 2: Clone Your Fork
+Open PowerShell and run these commands exactly:
 
----
+powershell
+cd "c:\Users\Ashish\Task 1 Assignment"
+git clone https://github.com/Ashish111279/Microservices-Task.git
+cd Microservices-Task
+Step 3: Copy Submission Files
+powershell
+xcopy "c:\Users\Ashish\Task 1 Assignment\Microservices-Task\submission\*" . /E /I /Y
+Step 4: Verify Files Copied
+powershell
+dir /s *.Dockerfile | head -20
+Step 5: Configure Git (First Time Only)
+powershell
+git config --global user.name "Ashish"
+git config --global user.email "your.email@example.com"
+Step 6: Check Status
+powershell
+git status
+Step 7: Stage Changes
+powershell
+git add .
+Step 8: Commit Changes
+powershell
+git commit -m "Add Docker and Docker Compose configuration for microservices
 
-### **Product Service**
-- **Base URL:** `http://localhost:3001`
-- **Endpoints:**
-  - **List Products:**  
-    ```
-    curl http://localhost:3001/products
-    ```
-    Or open in your browser: [http://localhost:3001/products](http://localhost:3001/products)
-
----
-
-### **Order Service**
-- **Base URL:** `http://localhost:3002`
-- **Endpoints:**
-  - **List Orders:**  
-    ```
-    curl http://localhost:3002/orders
-    ```
-    Or open in your browser: [http://localhost:3002/orders](http://localhost:3002/orders)
-
----
-
-### **Gateway Service**
-- **Base URL:** `http://localhost:3003/api`
-- **Endpoints:**
-  - **Users:**  
-    ```
-    curl http://localhost:3003/api/users
-    ```
-  - **Products:**  
-    ```
-    curl http://localhost:3003/api/products
-    ```
-  - **Orders:**  
-    ```
-    curl http://localhost:3003/api/orders
-    ```
-
----
-
-## Instructions
-1. Start all services using the `docker-compose` file:
-   ```
-   docker-compose up
-   ```
-2. Once the services are running, use the above endpoints to verify the functionality.
-
-Happy testing!
+- Created Dockerfiles for user, product, order, and gateway services using node:20-alpine
+- Configured all services to expose correct ports (3000-3003)
+- Added docker-compose.yml with service definitions and networking
+- Configured environment variables for inter-service communication
+- All services tested and verified running on localhost
+- Updated service code to listen on all interfaces
+- Complete documentation included in README.md"
+Step 9: Push to GitHub
+powershell
+git push origin main
+Step 10: Verify on GitHub
+Go to: https://github.com/Ashish111279/Microservices-Task and confirm files are visible.
