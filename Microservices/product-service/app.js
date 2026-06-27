@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Product Service is healthy' });
@@ -14,6 +14,6 @@ app.get('/products', (req, res) => {
   res.json(products);
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Product service running on port ${port}`);
 });

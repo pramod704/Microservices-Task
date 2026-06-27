@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 app.use(express.json());
-const port = 3002;
+const port = process.env.PORT || 3002;
 
 const orders = [];
 
@@ -25,6 +25,6 @@ app.post('/orders', async (req, res) => {
   res.json(order);
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Order service running on port ${port}`);
 });

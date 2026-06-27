@@ -1,0 +1,29 @@
+const express = require('express');
+const app = express();
+app.use(express.json());
+const port = process.env.PORT || 3002;
+
+const orders = [];
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'Order Service is healthy' });
+});
+
+app.get('/orders', (req, res) => {
+  res.json(orders);
+});
+
+app.post('/orders', (req, res) => {
+  const order = {
+    id: orders.length + 1,
+    userId: req.body.userId,
+    productId: req.body.productId,
+    timestamp: new Date()
+  };
+  orders.push(order);
+  res.json(order);
+});
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Order service running on port ${port}`);
+});
